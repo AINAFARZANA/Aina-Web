@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Titan+One&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4EFD9;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content h1 {
+    text-decoration-style: double;
+    color: #F367B1;
+    text-shadow: 1px 1px #A83C75;
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none; 
+    color: #F367B1;
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    text-shadow: 1px 1px #A83C75;
+}
+
+.comments-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comments-form h2, .comments-list h2 {
+    color: #F367B1;
+    font-family: "Francois One", sans-serif;
+}
+
+.comments-form label, .comments-form input, .comments-form textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.comments-form input[type="text"], .comments-form textarea {
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+}
+
+.comments-form input[type="submit"] {
+    background-color: #F367B1;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comments-form input[type="submit"]:hover {
+    background-color: #A83C75;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comments-list p {
+    background-color: #F4EFD9;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 10px;
+}

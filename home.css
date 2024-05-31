@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('home.png'); /* Use the uploaded image */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image */
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-family: 'Titan One', sans-serif;font-family: "Lilita One", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+    color: #FF69B4; /* Pink color for the heading */
+	letter-spacing: 5px; /* Add spacing between letters */
+    word-spacing: 10px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Center the buttons */
+}
+
+.button {
+    padding: 10px 20px;
+    font-family: 'Titan One', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #B8CF65;
+	border-color:black;
+	border:5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	
+}
+
+.button:hover {
+    background-color: #FF69B4;
+}

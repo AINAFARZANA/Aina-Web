@@ -1,0 +1,92 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Titan+One&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4EFD9;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content h1 {
+    text-decoration-style: double;
+    color: #F367B1;
+    text-shadow: 1px 1px #A83C75;
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F367B1;
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    text-shadow: 1px 1px #A83C75;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 50px; 
+    display: flex;
+    justify-content: center; 
+}
+
+.about {
+    flex: 1;
+    margin-left: 50px; 
+}
+
+.about h2 {
+    text-align: left;
+    color: #25955D;
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 60px;
+}
+
+.image {
+    flex: 1;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.image img {
+    max-width: 500px;
+    height: auto;
+    max-height: 500px; 
+}
+
+p {
+    color: #25955D;
+    font-family: "Francois One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-left: 100px;
+}

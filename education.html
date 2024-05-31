@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="educational.css">
+    <style>
+        .course-input input[type="text"] {
+            width: 60px; /* Adjust the width as needed */
+            margin-right: 10px; /* Add some spacing between inputs */
+        }
+    </style>
+    <script>
+        function calculateGPA() {
+            const credits = document.querySelectorAll('.credit');
+            const marks = document.querySelectorAll('.mark');
+            let totalCredits = 0;
+            let totalPoints = 0;
+            let validInput = true;
+
+            credits.forEach((credit, index) => {
+                const mark = parseFloat(marks[index].value);
+                const gradePoints = getGradePoints(mark);
+                const creditValue = parseFloat(credit.value);
+
+                if (isNaN(mark) || isNaN(creditValue)) {
+                    validInput = false;
+                } else {
+                    totalCredits=totalCredits+creditValue;
+                    totalPoints=totalPoints+(gradePoints * creditValue);
+                }
+            });
+
+            if (validInput && totalCredits > 0) {
+                const gpa = totalPoints / totalCredits;
+                document.getElementById('gpa').innerText = 'GPA: ' + gpa.toFixed(2);
+            } else {
+                document.getElementById('gpa').innerText = 'Invalid input';
+            }
+        }
+
+        function getGradePoints(mark) {
+            if (mark >= 80) {
+                return 4.0;
+            } else if (mark >= 65) {
+                return 3.0;
+            } else if (mark >= 50) {
+                return 2.0;
+            } else if (mark >= 40) {
+                return 1.0;
+            } else {
+                return 0.0;
+            }
+        }
+		function resetCalculator() {
+            const marks = document.querySelectorAll('.mark');
+            marks.forEach(mark => {
+                mark.value = '';
+            });
+            document.getElementById('gpa').innerText = 'GPA: ';
+        }
+    </script>
+</head>
+<body>
+    <div class="header-container">
+        <div class="header-content">
+            <h1>AINA</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Myself</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="passion.html">Passion</a></li>
+                    <li><a href="comment.html">Comments</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <section>
+        <div class="notebook">
+            <img src="note.png" alt="Notebook Image">
+            <div class="text-content">
+                <div class="left-side">
+                    <div class="list">
+                        <h2>My Education Journey</h2>
+                        <ul>
+                            <li>Sekolah Kebangsaan Taman Nirwana</li>
+                            <li>Sekolah Menengah Kebangsaan Pandan Jaya</li>
+                            <li>Kolej Matrikulasi Kedah</li>
+                            <li>UiTM Shah Alam</li>
+                        </ul>
+                    </div>
+                    <div class="table">
+                        <table style="width:100%">
+                            <tr>
+                                <th>Skills</th>
+                                <th>☆</th>
+                                <th>☆☆</th>
+                                <th>☆☆☆</th>
+                            </tr>
+                            <tr>
+                                <td>Designing</td>
+                                <td></td>
+                                <td></td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Programming</td>
+                                <td></td>
+                                <td>✓</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Mathematic knowledge</td>
+                                <td></td>
+                                <td>✓</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Communication</td>
+                                <td></td>
+                                <td>✓</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="education">
+                        <h2>My Education</h2>
+                        <p>I am currently pursuing a Bachelor of Science in Multimedia Computer Science at UiTM Shah Alam. On the left are some details about my academic background.</p>
+                    </div>
+                    <div class="gpa-calculator">
+                        <h2>GPA Calculator</h2>
+                        <form>
+                            <div class="course-input">
+                                Credit: <input type="text" class="credit" name="credit1">
+                                Mark: <input type="text" class="mark" name="mark1">
+                            </div>
+                            <div class="course-input">
+                                Credit: <input type="text" class="credit" name="credit2">
+                                Mark: <input type="text" class="mark" name="mark2">
+                            </div>
+                            <div class="course-input">
+                                Credit: <input type="text" class="credit" name="credit3">
+                                Mark: <input type="text" class="mark" name="mark3">
+                            </div>
+                            <button type="button" onclick="calculateGPA()">Calculate GPA</button>
+                            <button type="button" onclick="resetCalculator()">Reset</button>
+                        </form>
+                        <p id="gpa">GPA: </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

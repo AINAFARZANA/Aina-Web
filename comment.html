@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <link rel="stylesheet" href="comment.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const commentForm = document.getElementById('commentForm');
+            const commentsDisplay = document.getElementById('commentsDisplay');
+
+            commentForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const comment = document.getElementById('comment').value;
+
+                if (name && comment) {
+                    addComment(name, comment);
+                    commentForm.reset();
+                }
+            });
+
+            function addComment(name, comment) {
+                const comments = getComments();
+                comments.push({ name, comment });
+                localStorage.setItem('comments', JSON.stringify(comments));
+                displayComments();
+            }
+
+            function getComments() {
+                const comments = localStorage.getItem('comments');
+                return comments ? JSON.parse(comments) : [];
+            }
+
+            function displayComments() {
+                const comments = getComments();
+                commentsDisplay.innerHTML = '';
+                comments.forEach(comment => {
+                    const commentElement = document.createElement('p');
+                    commentElement.textContent = `${comment.name}: ${comment.comment}`;
+                    commentsDisplay.appendChild(commentElement);
+                });
+            }
+
+            displayComments();
+        });
+    </script>
+</head>
+<body>
+    <div class="header-container">
+        <div class="header-content">
+            <h1>AINA</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Myself</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="passion.html">Passion</a></li>
+                    <li><a href="comment.html">Comments</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="comments-container">
+        <div class="comments-form">
+            <h2>Leave a Comment</h2>
+            <form id="commentForm">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="comment">Comment:</label><br>
+                <textarea id="comment" name="comment" required></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+        <div class="comments-list">
+            <h2>Comments</h2>
+            <div id="commentsDisplay"></div>
+        </div>
+    </div>
+</body>
+</html>
